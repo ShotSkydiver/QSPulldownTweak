@@ -9,6 +9,7 @@ plugins {
 
 android {
     namespace = gropify.project.app.packageName
+    //noinspection GradleDependency
     compileSdk = 36
 
     defaultConfig {
