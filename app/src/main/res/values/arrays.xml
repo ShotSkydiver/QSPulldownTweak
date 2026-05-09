@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="qs_pulldown_entries">
+        <item>@string/qs_pulldown_disabled</item>
+        <item>@string/qs_pulldown_right</item>
+        <item>@string/qs_pulldown_left</item>
+    </string-array>
+
+    <string-array name="qs_pulldown_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>
