@@ -1,17 +1,8 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="Theme.AppDefault" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/colorPrimaryAccent</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryAccent</item>
-        <item name="colorOnPrimary">@color/colorPrimaryAccent</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/colorPrimaryAccent</item>
-        <item name="colorSecondaryVariant">@color/colorPrimaryAccent</item>
-        <item name="colorOnSecondary">@color/colorPrimaryAccent</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/white</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <!-- Customize your theme here. -->
+    <style name="Theme.QSPulldownTweak" parent="Theme.Material3.DynamicColors.DayNight">
+        <item name="android:windowBackground">@color/colorThemeBackground</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

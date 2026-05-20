@@ -11,6 +11,7 @@ import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
 import de.robv.android.xposed.XposedHelpers.callMethod
 import de.robv.android.xposed.XposedHelpers.getIntField
 import de.robv.android.xposed.XposedHelpers.getObjectField
+import me.connerowen.qspulldowntweak.data.DataConst
 
 
 @InjectYukiHookWithXposed(isUsingResourcesHook = true)
@@ -34,7 +35,7 @@ object HookEntry : IYukiHookXposedInit {
                     parameters(MotionEvent::class)
                 }.hook {
                     before {
-                        val quickPulldownMode = prefs.getString("qs_pulldown_mode", "0").toInt()
+                        val quickPulldownMode = DataConst.QS_PULLDOWN_SETTING_VALUES.indexOf(prefs.getString("qs_pulldown_mode", "Disabled"))
 
                         if (quickPulldownMode > 0) {
                             val ev = args[0] as MotionEvent

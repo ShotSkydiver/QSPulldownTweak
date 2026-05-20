@@ -13,7 +13,7 @@ betterandroid-system-extension = "1.0.4"
 drawabletoolbox = "1.0.7"
 androidx-core-ktx = "1.18.0"
 androidx-appcompat = "1.7.1"
-material = "1.13.0"
+material = "1.14.0"
 androidx-constraintlayout = "2.2.1"
 junit = "4.13.2"
 androidx-test-junit = "1.3.0"
@@ -21,7 +21,9 @@ androidx-test-espresso-core = "3.7.0"
 preference-ktx = "1.2.1"
 preference = "1.2.1"
 fragment = "1.8.9"
-composeMaterial3 = "1.4.0"
+composeMaterial3 = "1.5.0-alpha20"
+activityCompose = "1.13.0"
+composePreferences = "2.2.0"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -51,3 +53,5 @@ androidx-preference-ktx = { group = "androidx.preference", name = "preference-kt
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "composeMaterial3" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+compose-preferences = { group = "me.zhanghai.compose.preference", name = "preference", version.ref = "composePreferences" }

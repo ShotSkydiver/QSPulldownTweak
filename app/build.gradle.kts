@@ -10,7 +10,7 @@ plugins {
 android {
     namespace = gropify.project.app.packageName
     //noinspection GradleDependency
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = gropify.project.app.packageName
@@ -70,6 +70,8 @@ dependencies {
 
     // Jetpack Compose Material 3
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.compose.preferences)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.preference)
