@@ -1,15 +1,13 @@
 <resources>
     <string name="app_name">QS Expand on Pulldown</string>
-    <string name="xposed_desc">Pull down from the right or left side of the status bar to expand quick settings</string>
-    <string name="about_module">This Xposed Module is made by YukiHookAPI. \nLearn more https://github.com/HighCapable/YuKiHookAPI</string>
-    <string name="about_module_extension">This Xposed Module is powered by KavaRef.\nLearn more https://github.com/HighCapable/KavaRef</string>
+    <string name="xposed_desc">Pull down from the right or left side of the status bar to expand quick settings in one swipe</string>
     <string name="module_version">Module version: 0.1</string>
     <string name="module_not_activated">Module not activated</string>
     <string name="module_is_activated">Module is activated</string>
 
     <string name="tweak_settings">Tweak Settings</string>
     <string name="qs_pulldown_setting_title">Quick Settings expand mode</string>
-    <string name="qs_pulldown_setting_description">Choose which side of the status bar will fully expand quick settings when pulling down</string>
+    <string name="qs_pulldown_setting_description">Choose which side of the status bar causes quick settings to fully expand when pulling down</string>
     <string name="qs_pulldown_disabled">Disabled</string>
     <string name="qs_pulldown_right">From right</string>
     <string name="qs_pulldown_left">From left</string>

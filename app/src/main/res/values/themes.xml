@@ -1,8 +1,8 @@
 <resources>
-    <style name="Theme.QSPulldownTweak" parent="Theme.Material3.DynamicColors.DayNight">
+    <style name="Theme.QSPulldownTweak" parent="Theme.Material3Expressive.DynamicColors.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/colorThemeBackground</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

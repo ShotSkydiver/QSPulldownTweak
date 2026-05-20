@@ -2,6 +2,7 @@
 
 package me.connerowen.qspulldowntweak.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -23,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringArrayResource
@@ -31,6 +33,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
 import com.highcapable.yukihookapi.YukiHookAPI
 import me.connerowen.qspulldowntweak.R
 import me.connerowen.qspulldowntweak.ui.theme.AppTheme
@@ -42,8 +45,8 @@ import me.zhanghai.compose.preference.ListPreferenceType
 import me.zhanghai.compose.preference.ProvidePreferenceLocals
 import me.zhanghai.compose.preference.preferenceCategory
 
+private const val REPO_URL = "https://github.com/ShotSkydiver/QSPulldownTweak"
 class MainActivity : ComponentActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -59,9 +62,9 @@ class MainActivity : ComponentActivity() {
     private fun MainScreen() {
         val isActivated = YukiHookAPI.Status.isXposedModuleActive
         val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
+        val context = LocalContext.current
 
         var pulldownMode by DataConst.PREF_QS_PULLDOWN_MODE.rememberState()
-
         val entries = stringArrayResource(R.array.qs_pulldown_entries)
         val values = stringArrayResource(R.array.qs_pulldown_values)
 
@@ -83,7 +86,7 @@ class MainActivity : ComponentActivity() {
                     ),
                     actions = {
                         IconButton(
-                            onClick = { /* Handle GitHub click if needed */ },
+                            onClick = { context.startActivity(Intent(Intent.ACTION_VIEW, REPO_URL.toUri())) },
                             modifier = Modifier.padding(end = 8.dp)
                         ) {
                             Icon(
@@ -129,23 +132,6 @@ class MainActivity : ComponentActivity() {
                         titleId = R.string.qs_pulldown_setting_title,
                         summaryId = R.string.qs_pulldown_setting_description,
                     )
-
-//                    item { Spacer(modifier = Modifier.fillParentMaxHeight(0.5f)) }
-//
-//                    item {
-//                        Column(
-//                            modifier = Modifier.fillMaxWidth()
-//                        ) {
-//                            AboutCard(
-//                                iconRes = R.mipmap.ic_yukihookapi,
-//                                textRes = R.string.about_module
-//                            )
-//                            AboutCard(
-//                                iconRes = R.mipmap.ic_kavaref,
-//                                textRes = R.string.about_module_extension
-//                            )
-//                        }
-//                    }
                 }
             }
         }
@@ -222,34 +208,6 @@ class MainActivity : ComponentActivity() {
                     maxLines = 1
                 )
             }
-        }
-    }
-
-    @Composable
-    private fun AboutCard(iconRes: Int, textRes: Int) {
-        Row(
-            modifier = Modifier
-                .padding(start = 15.dp, end = 15.dp, bottom = 10.dp)
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.surfaceContainer, shape = RoundedCornerShape(24.dp))
-                .padding(8.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Image(
-                painter = painterResource(id = iconRes),
-                contentDescription = null,
-                modifier = Modifier
-                    .padding(end = 10.dp)
-                    .size(32.dp)
-            )
-
-            Text(
-                text = stringResource(id = textRes),
-                color = MaterialTheme.colorScheme.onSurface,
-                fontSize = 12.sp,
-                lineHeight = 16.sp,
-                maxLines = 2
-            )
         }
     }
 }
