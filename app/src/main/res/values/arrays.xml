@@ -11,4 +11,9 @@
         <item>1</item>
         <item>2</item>
     </string-array>
+
+    <string-array name="xposedscope">
+        <item>com.android.systemui</item>
+        <item>system</item>
+    </string-array>
 </resources>

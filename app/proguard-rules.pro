@@ -37,3 +37,7 @@
     <init>();
     *** inflate(android.view.LayoutInflater);
 }
+
+# -dontwarn java.lang.reflect.AnnotatedType
+-dontwarn com.highcapable.kavaref.**
+-keep class com.highcapable.kavaref.** { *; }
