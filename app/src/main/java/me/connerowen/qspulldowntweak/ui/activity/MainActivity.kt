@@ -131,7 +131,7 @@ class MainActivity : ComponentActivity() {
                         onValueChange = { pulldownMode = it },
                         values = values.toList(),
                         valueToText = { entries[values.indexOf(it)] },
-                        icon = { Icon(painterResource(R.drawable.expansion_panels), null) },
+                        icon = { Icon(painterResource(R.drawable.swipe_down), null) },
                         titleId = R.string.qs_pulldown_setting_title,
                         summaryId = R.string.qs_pulldown_setting_description,
                     )
